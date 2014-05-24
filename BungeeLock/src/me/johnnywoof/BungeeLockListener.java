@@ -15,6 +15,7 @@ import net.md_5.bungee.api.event.PreLoginEvent;
 import net.md_5.bungee.api.event.ServerConnectEvent;
 import net.md_5.bungee.api.plugin.Listener;
 import net.md_5.bungee.event.EventHandler;
+import net.md_5.bungee.event.EventPriority;
 
 public class BungeeLockListener implements Listener {
 
@@ -26,8 +27,8 @@ public class BungeeLockListener implements Listener {
 		
 	}
 	
-	@EventHandler
-	public void onPreLogin(PreLoginEvent event){//This event is async
+	@EventHandler(priority = EventPriority.HIGHEST)
+	public void onPreLogin(PreLoginEvent event){//This event is async (I hope, checked the javadocs)
 		
 		int time = bl.vars.isDeniedLogin(event.getConnection().getAddress().getAddress().getHostAddress());
 		
@@ -88,7 +89,7 @@ public class BungeeLockListener implements Listener {
 	}
 	
 	@SuppressWarnings("deprecation")
-	@EventHandler
+	@EventHandler(priority = EventPriority.HIGHEST)
     public void onChat(ChatEvent event) {
 		
 		if(event.getSender() instanceof ProxiedPlayer){
@@ -126,7 +127,7 @@ public class BungeeLockListener implements Listener {
 	}
 	
 	@SuppressWarnings("deprecation")
-	@EventHandler
+	@EventHandler(priority = EventPriority.HIGHEST)
 	public void onServerConnect(ServerConnectEvent event){
 		
 		if(!event.getTarget().getName().equalsIgnoreCase(Settings.authservername)){
@@ -143,7 +144,7 @@ public class BungeeLockListener implements Listener {
 		
 	}
 	
-	@EventHandler
+	@EventHandler(priority = EventPriority.HIGHEST)
 	public void onLogin(PostLoginEvent event){
 		
 		ServerInfo si = bl.getProxy().getServerInfo(Settings.authservername);
