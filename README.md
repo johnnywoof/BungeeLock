@@ -1,0 +1,4 @@
+BungeeLock
+==========
+
+Bungeecord authentication system
