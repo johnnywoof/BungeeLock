@@ -1,0 +1,89 @@
+#Main configuration for BungeeLock
+#Sorry that this config is kind of hard to read!
+
+########################################################################################################
+#NOTICE THAT THERE IS NO SPACE BETWEEN THE COLON, THIS IS NECCESSARY IN ORDER TO WORK
+########################################################################################################
+
+#The server where non-logged in players go to
+auth-server-name:lobby
+
+#If true, the server will deny logins if errors occur
+safe-mode:true
+
+#If true, when the player disconnects and reconnect,
+#They will be prompted for the password
+require-password-on-logout:true
+
+#The amount of seconds before a player is kicked because of not logging in
+#Set to -1 to disable it
+time-out:-1
+
+#The type of database to use
+#Mysql or flatfile is only accepted
+database-type:flatfile
+
+#Set this to true only if you have ip_forward false in bungeecord or running a cracked (offline mode) bungeecord
+#You can set this to false for premium servers WITH ip_forward to true, for better performance
+post-uuids:true
+
+#How much time, in seconds, should we deny logins from an ip that failed to provide the correct password?
+#Set to -1 to disable
+login-timeout:60
+
+#This below is only needed if using mysql
+database-host:localhost
+database-port:3306
+database-name:default
+database-username:root
+database-password:datpassword
+database-prefix:bl
+
+########################################################################################################
+#                          Language configuration
+########################################################################################################
+
+#The message to say to the player if they tried to do something without logging in first
+not-logged-in-message:&c&lYou are not allowed to do that without logging in first. Login with /login <password>
+
+#The message to say to the player if they tried to do something without registering first
+not-registered-message:&c&lYou are not allowed to do that without registering first. Register with /register <password> <confirm password>
+
+#The message to say when denied to login
+deny-login-message:You must wait .time. seconds before logging back in due to a failed login.
+
+#The message to say when a player is kicked for not logging in
+kicked-no-login:&cYou've been kicked for not following directions!
+
+#The message to say when a player enters a password with spaces
+password-no-space:&cPasswords cannot have spaces.
+
+#The message to say when a player enters two passwords that do not match
+password-no-match:&cPasswords do not match!
+
+#The message to say when a player logs in
+login-message:&aYou are now logged in!
+
+#The message to say when there was an error with an account
+account-error:&cSomething went wrong with your account. Please contact an admin!
+
+#The message to say when a user is already logged in
+already-logged-in:&cYou are already logged in!
+
+#The message to say when doing an action for a command
+mysql-message:&cVerifing...
+
+#Incorrect password message
+incorrect-message:&cThe password entered is incorrect!
+
+#Password changed message
+password-changed:&aYour password has been changed!
+
+#When a user attempts to change their password but the old one and provided is incorrect
+change-incorrect:&cOld password does not match current one!
+
+#When a user registers
+register-message:&aYou are now registered!
+
+#Please don't change this
+version:1
